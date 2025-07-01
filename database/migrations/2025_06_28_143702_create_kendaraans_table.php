@@ -18,7 +18,7 @@ return new class extends Migration
         $table->string('plat_nomor')->unique();
         $table->foreignId('category_id')->constrained()->onDelete('cascade');
         $table->integer('jumlah_stok');
-        $table->date('tanggal_input')->default(DB::raw('CURRENT_DATE'));
+        $table->timestamp('tanggal_input')->useCurrent();
         $table->timestamps();
     });
 }
